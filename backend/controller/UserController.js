@@ -5,7 +5,7 @@ const jsonwebtoken = require('jsonwebtoken');
 const registerUser = async (req, res) => {
     try {
         const { name, email, phone, password } = req.body;
-        const user = await userSchema.findOne({ email  });
+        const user = await userSchema.findOne({ email });
         if (user) {
             return res.status(400).json({ message: "User already exists" });
         }
@@ -17,13 +17,17 @@ const registerUser = async (req, res) => {
         res.status(201).json({ message: "User registered successfully" });
     }
     catch (error) {
-        res.status(500).json({ message: "Something went wrong" });
+        res.json({ message:error }).status(500);
     }
 }
 
 const loginUser = async (req, res) => {
     try {
+
+        
         const { email, password } = req.body;
+        console.log(email);
+        
         const user = await userSchema.findOne({ email });
         if (!user) {
             return res.status(400).json({ message: "Invalid Credentials" });
@@ -33,7 +37,7 @@ const loginUser = async (req, res) => {
             return res.status(400).json({ message: "Invalid Credentials" });
         }
         const token = jsonwebtoken.sign({ _id: user._id }, process.env.SIGN_JWT);
-        res.status(200).json({ message: "Login successful" , token }) ;
+        res.status(200).json({ message: "Login successful" , user , token}); ;
     }
     catch (error) {
         res.status(500).json({ message: "Something went wrong" });

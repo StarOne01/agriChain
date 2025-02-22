@@ -47,14 +47,14 @@ const SideBar = () => {
           </div>
         </Link>
 
-        <Link href="/dashboard/transactions">
+        {/* <Link href="/dashboard/transactions">
           <div onClick={()=>{
             setSelected("Transactions")
           }} className={` flex gap-2 rounded-md p-3 mt-2 ${selected=="Transactions" ? "bg-primary text-white" : ""} transition-all`}>
             <IndianRupee size={24} />
             <p className="">Transactions</p>
           </div>
-        </Link>
+        </Link> */}
 
 
         <Link href="/dashboard/Analytics">

@@ -29,13 +29,24 @@ const addOrder = async (req, res) => {
 const getOrdersByFarmer = async (req, res) => {
     try {
         const { farmerid } = req.params;
+
+        // Fetch orders by farmer ID
         const orders = await orderSchmea.find({ sellerId: farmerid });
-        res.status(200).json({ orders });
-    }
-    catch (error) {
+
+        // Fetch products for each order
+        const products = await Promise.all(
+            orders.map(async (order) => {
+                return await productSchmea.findById(order.productid);
+            })
+        );
+
+        res.status(200).json({ orders, products });
+    } catch (error) {
+        console.error(error);
         res.status(500).json({ message: "Something went wrong" });
     }
-}
+};
+
 
 const getOrders = async (req, res) => {
     try {

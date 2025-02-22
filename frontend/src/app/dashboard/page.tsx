@@ -30,7 +30,7 @@ const Page = ({}: PageProps) => {
             <p className="  text-gray-500 text-sm">Last 7 Days</p>
             <div className="flex items-center  gap-1">
               <Users size={24} />
-            <p className=" font-bold text-3xl py-2">120</p>
+            <p className=" font-bold text-3xl py-2">1</p>
             </div>
         </div>
         <div className=" bg-white  p-4 m-3">
@@ -38,7 +38,7 @@ const Page = ({}: PageProps) => {
             <p className="  text-gray-500 text-sm">Last 7 Days</p>
             <div className="flex items-center  gap-1">
               <ClipboardList size={24} />
-            <p className=" font-bold text-3xl py-2">22</p>
+            <p className=" font-bold text-3xl py-2">2</p>
             </div>
         </div>
       

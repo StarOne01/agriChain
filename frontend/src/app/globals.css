@@ -7,5 +7,12 @@
 .bg{
     background-image: url('https://images.squarespace-cdn.com/content/v1/559d432ce4b0d7e075ef85ca/1451417916158-UZDH3B21LLA8EJLE3EJ2/bg_dark.png?format=2500w');
     background-repeat: no-repeat;
-    
+}
+
+
+.bg2{
+    background-image: url('https://t4.ftcdn.net/jpg/02/87/91/19/360_F_287911901_EjS7gpl8ZmeGAHZKd3MPlurjwALWSIeX.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
