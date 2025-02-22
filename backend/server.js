@@ -37,5 +37,5 @@ app.use('/api/orders',orderroutes)
 
 
 app.listen(3000, () => {
-    console.log('Server listening on port 5000');
+    console.log('Server listening on port 3000');
 });

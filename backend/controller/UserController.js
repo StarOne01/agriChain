@@ -64,4 +64,5 @@ const addProductToCart = async (req, res) => {
     }
 }
 
+
 module.exports = { registerUser, loginUser , getuserCart , addProductToCart};
