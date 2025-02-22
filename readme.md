@@ -1,0 +1,1 @@
+# 🌾 AgriChain – Decentralized Marketplace for Farmers & Consumers
