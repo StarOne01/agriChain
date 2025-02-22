@@ -54,30 +54,6 @@ const Page = () => {
       </LineChart>
     </ResponsiveContainer>
   );
-
-  const top3Products = () => {
-    let productMap = {};
-    
-    orders.forEach((order) => {
-      productMap[order.productid] = (productMap[order.productid] || 0) + 1;
-    });
-
-    let sortedProducts = Object.keys(productMap)
-      .sort((a, b) => productMap[b] - productMap[a])
-      .slice(0, 3);
-
-    return sortedProducts.map((id) => getproduct(id));
-  };
-
-  const RevenueBreakdown = () => {
-    let productMap = {};
-
-    orders.forEach((order) => {
-      productMap[order.productid] = (productMap[order.productid] || 0) + order.totalAmount;
-    });
-
-    return productMap;
-  };
   const RevenueBreakdownData = () => {
     let productMap = {};
 
@@ -107,6 +83,31 @@ const Page = () => {
       </ResponsiveContainer>
     );
   };
+  const top3Products = () => {
+    let productMap = {};
+    
+    orders.forEach((order) => {
+      productMap[order.productid] = (productMap[order.productid] || 0) + 1;
+    });
+
+    let sortedProducts = Object.keys(productMap)
+      .sort((a, b) => productMap[b] - productMap[a])
+      .slice(0, 3);
+
+    return sortedProducts.map((id) => getproduct(id));
+  };
+
+  const RevenueBreakdown = () => {
+    let productMap = {};
+
+    orders.forEach((order) => {
+      productMap[order.productid] = (productMap[order.productid] || 0) + order.totalAmount;
+    });
+
+    return productMap;
+  };
+
+ 
 
 
 //   const SmartRecommendations = () => {
@@ -127,23 +128,16 @@ const Page = () => {
   }, []);
 
   return (
-    <div className=" font-inter">
+    <div className=" font-inter ">
       <h1 className=" text-xl  font-bold p-6">Sales Graph</h1>
       <SalesGraph />
 
-      <h1>Smart Recommendations (AI-Powered Insights)</h1>
-      {/* <p>{SmartRecommendations()}</p> */}
-      <div className="px-10">
-      <h1 >Revenue Breakdown (Per Product)</h1>
-      <ul>
-        {Object.entries(RevenueBreakdown()).map(([id, revenue]) => (
-          <li key={id}>{getproduct(id)}: ₹{revenue}</li>
-        ))}
-      </ul>
-      </div>
+        <h1 className=" text-xl  font-bold p-6">Revenue Breakdown</h1>
 
+        <CostBreakdownBarChart />
 
-        <h1>Top 3 Products</h1>
+        
+
          
     </div>
   );
