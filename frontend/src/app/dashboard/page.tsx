@@ -44,8 +44,20 @@ const Page = ({}: PageProps) => {
       
        </header>
 
+          <div>
+         <h1 className="text-xl px-5 font-bold">
+            Recent Orders
+         </h1>
 
 
+          <div className=" flex  items-center justify-center h-60">
+             
+           <img src="https://cdni.iconscout.com/illustration/premium/thumb/search-not-found-illustration-download-in-svg-png-gif-file-formats--zoom-logo-404-error-empty-pack-design-development-illustrations-6632131.png?f=webp" alt="product" className="w-60  h-60 rounded-full" />
+
+          </div>
+           
+         </div>
+      
   </div>;
 };
 
